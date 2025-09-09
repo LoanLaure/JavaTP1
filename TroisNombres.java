@@ -1,4 +1,4 @@
-//Programme qui lit trois nombres au clavier,classe les dans l'ordre croissant
+//Programme qui lit trois nombres au clavier, les classe dans l'ordre croissant
 //et les affiche dans cet ordre
 
 import java.util.Scanner;
@@ -24,16 +24,37 @@ public class TroisNombres{
         int last = 0;
 
         //Conditions d'affichage
-        if ((premier < deuxieme) && (premier < dernier)){
+        if ( (premier < deuxieme) && (premier < dernier) ){
             first = premier;
+	  if(deuxieme <= dernier) {
+	    sec = deuxieme;
+	    last = dernier;
+	  } else if (dernier <= deuxieme){
+	    sec = dernier;
+	    last = deuxieme;
+	  }
         }else if((deuxieme < premier) && (deuxieme < dernier)){
             first = deuxieme;
+	  if(premier <= dernier) {
+	    sec = premier;
+	    last = dernier;
+	  } else if (dernier <= premier){
+	    sec = dernier;
+	    last = premier;
+	  }
         }else if((dernier < premier) && (dernier < deuxieme)){
             first = dernier;
+	   if(premier <= deuxieme) {
+	    sec = premier;
+	    last = deuxieme;
+	  } else if (deuxieme <= premier){
+	    sec = deuxieme;
+	    last = premier;
+	  }
         }
 
         //Affichage
-        System.out.println("Le plus petit des Trois Nombres est : " + first);
+        System.out.println("Les nombres dans l'ordre croissant : " + first + " " + sec + " " + last);
     
     }
 }
